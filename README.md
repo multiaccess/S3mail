@@ -13,6 +13,17 @@ S3mail is a lightweight, stateless IMAP server that stores and serves full email
 - 📂 MIME-compliant message storage (RFC 5322)
 - ⚙️ Written in **Rust** for safety & performance (or Go — TBD)
 
+### 🗜️ **Compression Support**
+- **On-the-fly Compression**: Emails and indexes are stored with **zstd**, **gzip**, or **lz4** compression
+- **Reduced Storage Costs**: Achieves up to **90%** reduction in size, depending on compression algorithm
+- **Faster Data Transfer**: Compressed objects reduce bandwidth and improve upload/download speeds
+- **Transparent Decompression**: Automatically decompress emails or indexes during fetch (IMAP operations)
+- **Configurable Compression**: Choose between **zstd**, **gzip**, and other formats based on needs (speed vs compression ratio)
+
+### 📊 Metrics & Observability
+- Expose operational metrics (e.g., `imap_requests_total`, `emails_received_total`, etc.) via a **Prometheus-compatible `/metrics` endpoint**.
+
+
 ## 🔧 Use Cases
 
 - Cloud-native mail hosting

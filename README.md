@@ -31,6 +31,7 @@ S3mail is a lightweight, stateless IMAP server that stores and serves full email
 
 ```bash
 docker run -p 143:143 s3mail/s3mail
+```
 
 ## 🛣️ Roadmap
 

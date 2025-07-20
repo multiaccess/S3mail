@@ -23,6 +23,12 @@ S3mail is a lightweight, stateless IMAP server that stores and serves full email
 ### 📊 Metrics & Observability
 - Expose operational metrics (e.g., `imap_requests_total`, `emails_received_total`, etc.) via a **Prometheus-compatible `/metrics` endpoint**.
 
+### 🌐 Stateless Design for Scalability & High Availability
+- **No Local State**: All data (emails, indexes) is stored in **S3** or **MinIO**, so no server instance holds any persistent state.
+- **Elastic Horizontal Scaling**: Easily scale the system by adding or removing server instances based on load (works well in cloud-native or containerized environments like **Kubernetes**).
+- **Seamless Failover**: Stateless design ensures high availability and resilience. If a server instance fails, traffic is routed to healthy instances without affecting users.
+- **Cloud-Native Integration**: Perfect for **serverless architectures**, **Kubernetes**, or traditional cloud environments, leveraging auto-scaling and resource management for better cost efficiency.
+
 
 ## 🔧 Use Cases
 
